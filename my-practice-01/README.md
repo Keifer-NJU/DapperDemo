@@ -55,7 +55,7 @@
 参考checkstyle的官方网站：https://checkstyle.sourceforge.io/config.html
 ##### **简单实践（生产中会长很多）及采坑**
 * 首先checkstyle.xml文件位置要与pom.xml中<configLocation>checkstyle.xml</configLocation>的一致，（这里需要搞明白classpath:checkstyle.xml对应哪里，而我现在没搞懂，很惭愧，因此，暂没采取这种方式，而是直接用路径。）
-* 再者，下面这个例子中的 <module name="MethodLength">必须放在<module name =" TreeWalker">下，具体是可以参考官网xml的结构与原理(有点不擅长看英文囧)
+* 再者，下面这个例子中的 (module name="MethodLength")必须放在(module name =" TreeWalker")下，具体是可以参考官网xml的结构与原理(有点不擅长看英文囧)
 ```xml
 <?xml version="1.0"?>
 <!DOCTYPE module PUBLIC
