@@ -30,13 +30,13 @@
 DynamicSecurityFilter 就是 FilterSecurityInterceptor
 
 #### 理论与原理学习
-#####1.[Spring Security 实战干货：图解Spring Security中的Servlet过滤器体系](https://segmentfault.com/a/1190000023102733?utm_source=sf-related)
-#####2.[过滤器链的形成过程](https://felord.cn/spring-security-filter-chain.html)
+##### 1.[Spring Security 实战干货：图解Spring Security中的Servlet过滤器体系](https://segmentfault.com/a/1190000023102733?utm_source=sf-related)
+##### 2.[过滤器链的形成过程](https://felord.cn/spring-security-filter-chain.html)
 该文章的2.1 章节
-#####3.[Spring Security 实战干货：内置 Filter 全解析](https://www.felord.cn/spring-security-filters.html)
+##### 3.[Spring Security 实战干货：内置 Filter 全解析](https://www.felord.cn/spring-security-filters.html)
 Spring Security 以一个单 Filter（FilterChainProxy） 存在于整个过滤器链中，而这个 FilterChainProxy 实际内部代理着众多的 Spring Security Filter，这些就是内置过滤器
 内置过滤器，有一些默认已经启用，有一些需要引入特定的包并且对 HttpSecurity 进行配置才会生效 。而且它们的顺序是既定的。 只有你了解这些过滤器你才能基于业务深度定制 Spring Security ，需要时具体看
-#####4.[Spring Security 中的身份认证](https://blog.gaoyuexiang.cn/2020/06/07/spring-security-authentication/)
+##### 4.[Spring Security 中的身份认证](https://blog.gaoyuexiang.cn/2020/06/07/spring-security-authentication/)
 介绍Spring Security 自带的身份认证方式和添加自己的身份认证方式的方法
 
 **总结**：
@@ -50,7 +50,7 @@ Spring Security 以一个单 Filter（FilterChainProxy） 存在于整个过滤�
 当然，这不是一个强制的限制，你仍然可以通过重写 AbstractAuthenticationProcessFilter.successfulAuthentication() 方法来修改重定向的行为。
 
 另外，也了解到了实现完 Filter 后，需要实现 WebSecurityConfigurerAdapter，将 Filter 加入到 SecurityFilterChain 中。
-#####5.权限认证
+##### 5.权限认证
 * [基于编程的静态方式-基于配置的接口角色访问控制](https://www.felord.cn/spring-security-javaconfig-rbac.html)
 * [基于编程的静态方式-基于注解的接口角色访问控制](https://www.felord.cn/spring-security-annotation-rbac.html)
 * [动态权限控制-上](https://www.felord.cn/spring-security-dynamic-rbac-a.html)
@@ -69,8 +69,8 @@ Spring Security 以一个单 Filter（FilterChainProxy） 存在于整个过滤�
 
 一句话概括： 访问时，在数据库内检索你访问的url需要什么角色，判断是否与自己的登陆角色相同，相同则可以访问，不相同则禁止访问。
 
-#####6.本demo的思路原理: [SpringSecurity+JWT认证流程解析](https://juejin.cn/post/6846687598442708999#heading-13)
-#####7.本demo的动态鉴权采用方案1：[SpringSecurity动态鉴权流程解析 ](https://juejin.cn/post/6847902222668431368)
+##### 6.本demo的思路原理: [SpringSecurity+JWT认证流程解析](https://juejin.cn/post/6846687598442708999#heading-13)
+##### 7.本demo的动态鉴权采用方案1：[SpringSecurity动态鉴权流程解析 ](https://juejin.cn/post/6847902222668431368)
 那我们要做到这一步可以想些方案，比如：
 * 1.直接重写一个AccessDecisionManager，将它用作默认的AccessDecisionManager，并在里面直接写好鉴权逻辑。
 * 2.再比如重写一个投票器，将它放到默认的AccessDecisionManager里面，和之前一样用投票器鉴权。
